@@ -1,0 +1,64 @@
+# Dependencies
+node_modules/
+
+# Scripts with secrets
+scripts/
+
+# Environment variables (API keys)
+.env
+.env.local
+.env.production
+
+# Expo
+.expo/
+dist/
+web-build/
+expo-env.d.ts
+
+# Native
+android/
+ios/
+*.jks
+*.p8
+*.p12
+*.key
+*.mobileprovision
+*.orig.*
+
+# Metro
+.metro-health-check*
+
+# Debug
+npm-debug.*
+yarn-debug.*
+yarn-error.*
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Build
+build/
+*.apk
+*.aab
+*.ipa
+
+# Logs
+logs/
+*.log
+
+# Firebase
+firebase-debug.log
+firestore-debug.log
+
+# Claude/AI
+.claude/
+AGENTS.md
+CLAUDE.md
