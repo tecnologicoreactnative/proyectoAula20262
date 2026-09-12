@@ -1,3 +1,12 @@
-# proyectoAula20262
+# Grupo 6, GuardaFacil
 
-Ver las instruciones en el Virtual TDEA
+
+### Miembros 
+
+- Juan jose saldarriaga
+- Cristian Ceballaos Carvajal 
+- Dayanna alejandra Ramirez Hernandez
+- Jarbey Andres Ocampo Cuervo
+
+
+
