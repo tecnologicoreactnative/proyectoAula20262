@@ -1,0 +1,27 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Colección de Cátedras y Talleres ACUDE (Bloque 10)
+    // Lectura pública para cualquier estudiante autenticado
+    match /acudes/{acudeId} {
+      allow read: if request.auth != null;
+      allow write: if false; // Solo administradores o scripts autorizados
+    }
+
+    // Colección de Inscripciones
+    // Cada estudiante solo puede gestionar sus propias matrículas
+    match /inscripciones/{inscripcionId} {
+      allow read: if request.auth != null && resource.data.idUsuario == request.auth.uid;
+      allow create: if request.auth != null && request.resource.data.idUsuario == request.auth.uid;
+      allow update, delete: if request.auth != null && resource.data.idUsuario == request.auth.uid;
+    }
+
+    // Colección de Usuarios / Estudiantes
+    // Protección estricta: cada usuario solo puede leer y modificar su propio documento
+    // NUNCA expone credenciales ni contraseñas (delegadas a Firebase Auth)
+    match /users/{userId} {
+      allow read, write: if request.auth != null && request.auth.uid == userId;
+    }
+  }
+}
